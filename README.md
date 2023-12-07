@@ -1,2 +1,1 @@
-## クラス命名規則
-BEM記法
+# weight-management-app
