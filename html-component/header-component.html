@@ -1,0 +1,75 @@
+<div class="header">
+  <div class="header__logo">logo</div>
+  <div class="header__menu-button" onclick="toggleMenu()">
+    <div id="bar1" class="bar"></div>
+    <div id="bar2" class="bar"></div>
+    <div id="bar3" class="bar"></div>
+  </div>
+  <nav id="header__nav-menu">
+    <!-- ここにメニューのリンクなどを追加 -->
+  </nav>
+</div>
+<style>
+  .header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .header__menu-button {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    width: 30px;
+    height: 25px;
+    justify-content: space-between;
+  }
+
+  .bar {
+    width: 30px;
+    height: 5px;
+    background-color: #fff;
+    transition: transform 0.3s;
+  }
+
+  #bar2 {
+    transition-delay: 0.3s;
+  }
+
+  #header__nav-menu {
+    display: none;
+  }
+
+  #header__nav-menu.show {
+    display: block;
+    position: absolute;
+  }
+
+  /* メニューが開いた時のアニメーション */
+  #bar1.open {
+    transform: rotate(-45deg) translate(-8px, 8px);
+  }
+
+  #bar2.open {
+    opacity: 0;
+  }
+
+  #bar3.open {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+</style>
+<script>
+  function toggleMenu() {
+    var navMenu = document.getElementById('header__nav-menu');
+    navMenu.classList.toggle('show');
+    var bar1 = document.getElementById('bar1');
+    var bar2 = document.getElementById('bar2');
+    var bar3 = document.getElementById('bar3');
+    bar1.classList.toggle('open');
+    bar2.classList.toggle('open');
+    bar3.classList.toggle('open');
+  }
+</script>
