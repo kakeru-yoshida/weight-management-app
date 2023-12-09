@@ -1,0 +1,21 @@
+.past-weight {
+  display: block;
+  padding: 20px 10px 30px;
+  border: 1px solid #000;
+  margin-top: 30px;
+}
+.past-weight__list-child {
+  display: flex;
+  font-size: 14px;
+}
+.weight-weight__text {
+  font-size: 15px;
+}
+.past-weight__list-child__weight {
+  margin-left: 20px;
+}
+
+/* @media only screen and (max-width: 767px) {
+  .past-weight {
+  }
+} */

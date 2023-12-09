@@ -1,0 +1,17 @@
+.nav-menu {
+  display: inline-block;
+  padding: 20px 10px 30px;
+  border: 1px solid #000;
+}
+.nav-menu__text {
+  font-size: 15px;
+  margin-top: 30px;
+}
+.nav-menu__ttl {
+  font-size: 18px;
+}
+.nav-menu__weight-num {
+  width: 100px;
+  background-color: #fff;
+  color: #000;
+}

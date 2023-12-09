@@ -1,0 +1,55 @@
+.header {
+  background-color: #333;
+  color: #fff;
+  height: 50px;
+  padding: 0 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__menu-button {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  width: 30px;
+  height: 25px;
+  justify-content: space-between;
+}
+
+.bar {
+  width: 30px;
+  height: 5px;
+  background-color: #fff;
+  transition: transform 0.3s;
+}
+
+#bar2 {
+  transition-delay: 0.3s;
+}
+
+#header__nav-menu {
+  display: none;
+}
+
+#header__nav-menu.show {
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 50px;
+  background-color: #333;
+}
+
+/* メニューが開いた時のアニメーション */
+#bar1.open {
+  transform: rotate(-45deg) translate(-8px, 8px);
+}
+
+#bar2.open {
+  opacity: 0;
+}
+
+#bar3.open {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
