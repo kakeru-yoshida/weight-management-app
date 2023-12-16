@@ -6,7 +6,7 @@ const WeightInput: React.FC = () => {
     <div className="weight-input">
       <p className="weight-input__text">【今日の体重を入力】</p>
       <input className="weight-input__weight-num" type="number" name="quantity" min="1" max="100"/>
-      <input type="submit" value="登録"/>
+      <input className="weight-input__submit" type="submit" value="登録"/>
     </div>
   );
 }

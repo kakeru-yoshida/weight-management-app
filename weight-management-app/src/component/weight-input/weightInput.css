@@ -1,18 +1,29 @@
 .weight-input {
   display: inline-block;
-  padding: 20px 10px 30px;
+  padding: 15px 10px 10px;
   border: 1px solid #000;
+  margin-top: 30px;
 }
 .weight-input__text {
   font-size: 15px;
+  margin-bottom: 5px;
 }
 .weight-input__weight-num {
   width: 100px;
   background-color: #fff;
   border: 1px solid #000;
 }
+.weight-input__submit {
+  margin-left: 5px;
+  border: 1px solid #000;
+  font-size: 15px;
+  padding: 0 6px;
+  color: #fff;
+  background-color: #000;
+  font-weight: bold;
+}
 @media only screen and (max-width: 767px) {
   .weight-input {
-    margin-top: 30px;
+    /* margin-top: 30px; */
   }
 }

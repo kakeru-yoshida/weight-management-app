@@ -1,8 +1,8 @@
 .past-weight {
   display: block;
-  padding: 20px 10px 30px;
+  padding: 15px 10px 10px;
   border: 1px solid #000;
-  margin-top: 30px;
+  margin: 30px 20px 0;
 }
 .past-weight__list-child {
   display: flex;
@@ -10,12 +10,23 @@
 }
 .weight-weight__text {
   font-size: 15px;
+  margin-bottom: 5px;
 }
 .past-weight__list-child__weight {
   margin-left: 20px;
 }
+.nav-menu__submit {
+  margin-left: 5px;
+  border: 1px solid #fff;
+  font-size: 15px;
+  padding: 0 6px;
+  color: #000;
+  background-color: #fff;
+  font-weight: bold;
+}
 
-/* @media only screen and (max-width: 767px) {
+@media only screen and (max-width: 767px) {
   .past-weight {
+    margin: 15px 5px 0;
   }
-} */
+}
