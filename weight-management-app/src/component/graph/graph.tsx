@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -10,7 +11,7 @@ import {
   Legend,
 } from "chart.js";
 import { Line } from "react-chartjs-2";
-import './graph.css';
+import "./graph.css";
 
 ChartJS.register(
   CategoryScale,
@@ -23,32 +24,29 @@ ChartJS.register(
 );
 
 const Graph: React.FC = () => {
-  const options = {
-    responsive: true,
-    plugins: {
-      title: {
-        display: true,
-        text: "グラフタイトル",
-      },
-    },
-    maintainAspectRatio: false
-  };
+  const [apiData, setApiData] = useState<number[]>([]);
 
-  const labels = [
-    "12/11",
-    "12/11",
-    "12/11",
-    "12/11",
-    "12/11",
-    "12/11",
-  ];
-
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        // APIからデータを取得
+        const response = await axios.get("http://localhost:3000/api/data");
+        // データが取得できた場合はstateにセット
+        setApiData(response.data);
+      } catch (error) {
+        console.error("API取得エラー:", error);
+      }
+    };
+    fetchData();
+  }, []);
+  console.log(apiData)
+  // グラフのデータ
   const graphData = {
-    labels: labels,
+    labels: ["12/11", "12/11", "12/11", "12/11", "12/11", "12/11"],
     datasets: [
       {
         label: "体重",
-        data: [65, 59, 60, 81, 56, 55, 59, 60, 81, 56, 55, 59, 60, 81, 56, 55, 59, 60, 81, 56, 55, 59, 60, 81, 56, 55, 59, 60, 81, 56, 55],
+        data: [100, 27, 55, 12, 1, 5],
         borderColor: "rgb(75, 192, 192)",
       },
       {
@@ -59,15 +57,21 @@ const Graph: React.FC = () => {
     ],
   };
 
+  // グラフのオプション
+  const options = {
+    responsive: true,
+    plugins: {
+      title: {
+        display: true,
+        text: "グラフタイトル",
+      },
+    },
+    maintainAspectRatio: false,
+  };
+
   return (
     <div className="graph-content">
-      <Line
-        height={20}
-        width={100}
-        data={graphData}
-        options={options}
-        id="chart-key"
-      />
+      <Line height={20} width={100} data={graphData} options={options} id="chart-key" />
     </div>
   );
 };
